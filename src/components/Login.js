@@ -12,17 +12,22 @@ class Login extends Component {
   }
 
   handleEmailChange = (e) => {
-    console.log(e.target.value);
+    this.setState({
+      email: e.target.value,
+    });
   };
 
   handlePasswordChange = (e) => {
-    console.log(e.target.value);
+    this.setState({
+      password: e.target.value,
+    });
   };
 
   handleFormSubmit = (e) => {
     e.preventDefault();
     // console.log('emailInputRef', this.emailInputRef);
     // console.log('passwordInputRef', this.passwordInputRef);
+    console.log('state', this.state);
   };
   render() {
     return (
@@ -35,6 +40,7 @@ class Login extends Component {
             required
             // ref={this.emailInputRef}
             onChange={this.handleEmailChange}
+            value={this.state.email}
           />
         </div>
         <div className="field">
@@ -44,6 +50,7 @@ class Login extends Component {
             required
             //ref={this.passwordInputRef}
             onChange={this.handlePasswordChange}
+            value={this.state.password}
           />
         </div>
         <div className="field">

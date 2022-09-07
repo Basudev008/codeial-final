@@ -1,5 +1,6 @@
-import { PropTypes } from 'prop-types';
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
 
 class PostsList extends Component {
   render() {
@@ -10,22 +11,23 @@ class PostsList extends Component {
           <div className="post-wrapper" key={post._id}>
             <div className="post-header">
               <div className="post-avatar">
-                <img
-                  src="https://cdn-icons-png.flaticon.com/512/2202/2202112.png"
-                  alt="user-pic"
-                />
-
+                <Link to={`/user/${post.user._id}`}>
+                  <img
+                    src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png"
+                    alt="user-pic"
+                  />
+                </Link>
                 <div>
                   <span className="post-author">{post.user.name}</span>
                   <span className="post-time">a minute ago</span>
                 </div>
               </div>
-
               <div className="post-content">{post.content}</div>
+
               <div className="post-actions">
                 <div className="post-like">
                   <img
-                    src="https://cdn-icons-png.flaticon.com/512/2589/2589175.png"
+                    src="https://as1.ftcdn.net/v2/jpg/03/56/32/78/1000_F_356327877_cNUv8LDs4Qqqj3u1Tk6DejpGn1CK3dzW.jpg"
                     alt="likes-icon"
                   />
                   <span>{post.likes.length}</span>
@@ -33,7 +35,7 @@ class PostsList extends Component {
 
                 <div className="post-comments-icon">
                   <img
-                    src="https://cdn-icons-png.flaticon.com/512/13/13673.png"
+                    src="https://stock.adobe.com/images/typing-in-a-chat-bubble-icon-comment-sign-symbol/304486491"
                     alt="comments-icon"
                   />
                   <span>{post.comments.length}</span>

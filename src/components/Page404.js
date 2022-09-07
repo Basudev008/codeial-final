@@ -1,7 +1,11 @@
 import React from 'react';
 
 function Page404(props) {
-  return <div>404: Nothing Found Here</div>;
+  return (
+    <div>
+      <h1>404: Nothing found here!</h1>
+    </div>
+  );
 }
 
 export default Page404;
